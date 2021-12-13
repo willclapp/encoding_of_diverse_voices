@@ -29,7 +29,15 @@
 </script>
 <script>
     // some global variables
-    let talker_ids = ['M1', 'M2'];
+    let talker_ids = [];
+    let talker_set_case = Math.floor(Math.random() * 3);
+    if (talker_set_case == 0) {
+        talker_ids = ["BMC01", "BMC02", "BMC03", "BMC04", "BMC05", "BMC08", "BMC09", "BMC10"];
+    } else if (talker_set_case == 1) {
+        talker_ids = ["BMC03", "BMC04", "BMC05", "BMC10", "WMC02", "WMC03", "WMC08", "WMC09"];
+    } else {
+        talker_ids = ["WMC01", "WMC02", "WMC03", "WMC04", "WMC05", "WMC07", "WMC08", "WMC09"];
+    }
     let identical_tokens = true;
     let wrong_phase = 0;
     let correct_quiet = 0;
@@ -44,5 +52,5 @@
 <script src="make_stims.js"></script>
 <script src="../practice_feedback.js"></script>
 <script src="../audiocheck.js"></script>
-<script src="index.js"></script>
+<!-- <script src="index.js"></script> -->
 </html>

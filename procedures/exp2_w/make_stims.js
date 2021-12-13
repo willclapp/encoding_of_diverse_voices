@@ -15,7 +15,8 @@ let audio_data = {
     Buttons: 'UNKNOWN', 
     Presentation: 'UNKNOWN', 
     Recording: 0, 
-    token_repeated: true
+    token_repeated: true,
+    listener_pop: 'white'
 }
 
 let audio_temp = {
@@ -41,7 +42,8 @@ let response_data = {
     Presentation: 'UNKNOWN', 
     Recording: 0, 
     token_repeated: true,
-    case: 'UNKNOWN'
+    case: 'UNKNOWN',
+    listener_pop: 'white'
 }
 
 let response_temp = {
@@ -120,10 +122,11 @@ exp_order = assignTrials(exp_order, exp_lag_list, exp_id_list);
 checkDistribution(exp_order);
 
 // Set the talker for each new trial
-let poss = ["Same_M1", "Same_M2", "Diff_M1", "Diff_M2"];
+// let poss = ["Same_M1", "Same_M2", "Diff_M1", "Diff_M2"];
 let practice_talker_order = shuffle(generateTalkerOrder(practice_id_list, talker_ids));
 let memload_talker_order = shuffle(generateTalkerOrder(memload_id_list, talker_ids));
 let exp_talker_order = shuffle(generateTalkerOrder(exp_id_list, talker_ids));
+console.log(memload_talker_order);
 
 // generate the trial objects
 let practice_audio_objects = [];
@@ -147,3 +150,5 @@ generateBlankTrials(exp_audio_objects, exp_response_objects, num_exp, audio_temp
 generateTrials(exp_order, exp_talker_order,
    exp_audio_objects, 
    exp_response_objects, "exp");
+
+console.log(practice_audio_objects);

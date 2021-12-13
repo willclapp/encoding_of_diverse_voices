@@ -247,10 +247,6 @@ function generateTalkerOrder(words, talker_list) {
             out_arr.push("Same_" + talker_list[0]);
         }
     }
-
-
-
-    
     return out_arr;
 }
 
@@ -378,11 +374,11 @@ function generateTrials(trial_ord, talker_ord, audio_trials, response_trials, ph
                 }
                 // stitch together the talker key
                 let talker_key = audio_trials[index].data.Talker;
-                if (j == 1 && audio_trials[index].data.token_repeated == false) {
-                    talker_key += "_2";
-                } else {
-                    talker_key += "_1";
-                }
+                // if (j == 1 && audio_trials[index].data.token_repeated == false) {
+                //     talker_key += "_2";
+                // } else {
+                //     talker_key += "_1";
+                // }
                 // locate correct recording number
                 let talker_index = header_key.indexOf(talker_key);
                 for (let k = 0; k < word_ids.length; k++) {
