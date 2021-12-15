@@ -324,6 +324,8 @@ function generateTrials(trial_ord, talker_ord, audio_trials, response_trials, ph
                 response_trials[index].data.num_voices = talker_ids.length;
                 audio_trials[index].data.token_repeated = identical_tokens;
                 response_trials[index].data.token_repeated = identical_tokens;
+                audio_trials[index].data.talker_set = talker_ids;
+                response_trials[index].data.talker_set = talker_ids;
 
                 //identify the word
                 for (let k = 0; k < word_ids.length; k++) {

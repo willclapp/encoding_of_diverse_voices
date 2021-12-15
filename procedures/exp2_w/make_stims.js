@@ -16,7 +16,8 @@ let audio_data = {
     Presentation: 'UNKNOWN', 
     Recording: 0, 
     token_repeated: true,
-    listener_pop: 'white'
+    listener_pop: 'white',
+    talker_set: 'UNKNOWN'
 }
 
 let audio_temp = {
@@ -43,7 +44,8 @@ let response_data = {
     Recording: 0, 
     token_repeated: true,
     case: 'UNKNOWN',
-    listener_pop: 'white'
+    listener_pop: 'white',
+    talker_set: 'UNKNOWN'
 }
 
 let response_temp = {
