@@ -126,7 +126,6 @@ checkDistribution(exp_order);
 let practice_talker_order = shuffle(generateTalkerOrder(practice_id_list, talker_ids));
 let memload_talker_order = shuffle(generateTalkerOrder(memload_id_list, talker_ids));
 let exp_talker_order = shuffle(generateTalkerOrder(exp_id_list, talker_ids));
-console.log(memload_talker_order);
 
 // generate the trial objects
 let practice_audio_objects = [];
@@ -150,5 +149,3 @@ generateBlankTrials(exp_audio_objects, exp_response_objects, num_exp, audio_temp
 generateTrials(exp_order, exp_talker_order,
    exp_audio_objects, 
    exp_response_objects, "exp");
-
-console.log(practice_audio_objects);

@@ -21,7 +21,7 @@ let audio_check_evaluate = {
     stimulus: " ",
     trial_duration: 10,
     on_finish: function() {
-        if (wrong_phase <= 1 && correct_quiet >= 3) {
+        if (wrong_phase <= 2 && correct_quiet >= 3) {
             pass = true;
         }
         wrong_phase = 0;
@@ -35,7 +35,7 @@ let audio_check_second_evaluate = {
     trial_duration: 10,
     on_finish: function() {
         if (!pass) {
-            if (wrong_phase <= 1 && correct_quiet >= 3) {
+            if (wrong_phase <= 2 && correct_quiet >= 3) {
                 pass = true;
             }
         }
@@ -56,7 +56,7 @@ let audio_check_between = {
         }
     },
     on_finish: function() {
-        if (wrong_phase <= 1 && correct_quiet >= 3) {
+        if (wrong_phase <= 2 && correct_quiet >= 3) {
             pass = true;
         }
     }

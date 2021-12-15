@@ -282,7 +282,7 @@ function generateBlankTrials(audio_array, response_array, quantity, audio_templa
 
 
 function generateDifferentTalkers(talker_list, num_reps) {
-    let loops = Math.ceil(num_reps / talker_list.length / 2);
+    let loops = Math.ceil(num_reps / talker_list.length / 2) + 1;
     let output_list = [];
     for (let i = 0; i < loops; i++) {
         shuffle(talker_list);
@@ -342,7 +342,7 @@ function generateTrials(trial_ord, talker_ord, audio_trials, response_trials, ph
                     response_trials[index].stimulus = old_new_prompt;
                 }
                 // identify the presentation, talker, and stimulus
-                let talker_info = talker_ord[unique_index];
+                let talker_info = talker_ord[unique_index];      
                 if (talker_info.split('_').shift() == 'Same') {
                     audio_trials[index].data.Same_Talker = true;
                     response_trials[index].data.Same_Talker = true;
