@@ -62,9 +62,9 @@ var interruption_options = [
 ]
 var interruption = make_question("During the course of this task, were you interrupted or did you step away at all?", interruption_options.join(''))
 
-var interruption_time = make_question("If yes, can you estimate how long in minutes you spent on tasks other than this task? (Type 'NA' if you prefer not to answer.)", html_input({ type: 'time', name: 'interruption-time' }));
+var interruption_time = make_question("If yes, can you estimate how long in minutes you spent on tasks other than this task?", html_input({ type: 'time', name: 'interruption-time' }));
 
-var fair_price = make_question("What do you think is a fair price for the work you did? (Type 'NA' if you prefer not to answer.)", html_input({ type: 'time', name: 'fair-price' }));
+var fair_price = make_question("What do you think is a fair price for the work you did?", html_input({ type: 'time', name: 'fair-price' }));
 
 var hand_options = [
     html_input({ type: 'radio', name: 'hand', id: 'left', label: 'Left' }),
