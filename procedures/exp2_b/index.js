@@ -102,6 +102,7 @@ var survey1 = {
         race +
         ethnicity +
         language +
+        hearing +
         '</ol>'
 };
 

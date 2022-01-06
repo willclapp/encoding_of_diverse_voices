@@ -82,6 +82,14 @@ var audio_options = [
 
 var audio = make_question("How did you listen to the audio during this task?", audio_options.join(''))
 
+var hearing_options = [
+    html_input({ type: 'radio', name: 'hearing', id: 'yes', label: 'Yes'}),
+    html_input({ type: 'radio', name: 'hearing', id: 'no', label: 'No'}),
+    html_input({ type: 'radio', name: 'hearing', id: 'no-answer', label: 'Prefer not to say'}),
+]
+
+var hearing = make_question("Have you ever been disgnosed with hearing loss or hearing related difficulties?", hearing_options.join(''))
+
 var assess_options = [
     html_input({ type: 'radio', name: 'assess', id: 'yes', label: 'Yes' }),
     html_input({ type: 'radio', name: 'assess', id: 'no', label: 'No' }),
@@ -144,4 +152,4 @@ var region_options = [
 
 var region = make_question("In which region of the U.S. do you currently live?", region_options.join(''))
 
-var ethnicity = make_question("How would you describe your ethnicity, e.g., Latinx, Ashkenazi, Arab, etc. (Type 'NA' if you prefer not to answer.)", html_input({ type: 'time', name: 'ethnicity'}))
+var ethnicity = make_question("How would you describe your ethnicity, e.g., Latinx, Ashkenazi, Arab, etc.", html_input({ type: 'time', name: 'ethnicity'}))
