@@ -150,6 +150,21 @@ generateTrials(exp_order, exp_talker_order,
    exp_audio_objects, 
    exp_response_objects, "exp");
 
+// Create preload array
+let preload_exp = [];
 
-console.log(practice_audio_objects)
-console.log(practice_response_objects)
+for (let i = 0; i < practice_audio_objects.length; i++) {
+    if (!(practice_audio_objects[i].data.Same_Talker && practice_audio_objects[i].data.Presentation == "OLD")) {
+        preload_exp.push(practice_audio_objects[i].stimulus);
+    }
+}
+for (let i = 0; i < memload_audio_objects.length; i++) {
+    if (!(memload_audio_objects[i].data.Same_Talker && memload_audio_objects[i].data.Presentation == "OLD")) {
+        preload_exp.push(memload_audio_objects[i].stimulus);
+    }
+}
+for (let i = 0; i < exp_audio_objects.length; i++) {
+    if (!(exp_audio_objects[i].data.Same_Talker && exp_audio_objects[i].data.Presentation == "OLD")) {
+        preload_exp.push(exp_audio_objects[i].stimulus);
+    }
+}

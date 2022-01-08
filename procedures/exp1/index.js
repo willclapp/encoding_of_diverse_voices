@@ -123,7 +123,8 @@ timeline.push(survey1)
 timeline.push(survey2)
 
 jsPsych.init({
-    preload_audio: preload_audiocheck,
+    preload_audio: preload_audiocheck, 
+    preload_audio: preload_exp,
     timeline: timeline,
     show_progress_bar: true,
     auto_update_progress_bar: false,
