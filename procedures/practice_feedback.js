@@ -1,6 +1,7 @@
 let feedback_trial = {
     type: 'html-keyboard-response',
     trial_duration: 3000, 
+    response_ends_trial: false,
     stimulus: function() {
         var last_trial_case = jsPsych.data.get().last(1).values()[0].case;
         // console.log(last_trial_case);
