@@ -122,9 +122,14 @@ var survey2 = {
 timeline.push(survey1)
 timeline.push(survey2)
 
+// Get all media objects in one array
+let preload_array = preload_exp;
+for (let i = 0; i < preload_audiocheck.length; i++) {
+    preload_array.push(preload_audiocheck[i]);
+}
+
 jsPsych.init({
-    preload_audio: preload_audiocheck, 
-    preload_audio: preload_exp,
+    preload_audio: preload_array, 
     timeline: timeline,
     show_progress_bar: true,
     auto_update_progress_bar: false,
