@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Speech memory study</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://proliferate.alps.science/static/js/proliferate.js" type="text/javascript"></script>
+    <script src="../../jspsych-6.2.0/jspsych.js"></script>
+    <script src="../../jspsych-6.2.0/plugins/jspsych-audio-keyboard-response.js"></script>
+    <script src="../../jspsych-6.2.0/plugins/jspsych-html-keyboard-response.js"></script>
+    <script src="../../jspsych-6.2.0/plugins/jspsych-html-button-response.js"></script>
+    <script src="../../jspsych-6.2.0/plugins/jspsych-survey-multi-choice.js"></script>
+    <script src="../../jspsych-6.2.0/plugins/jspsych-survey-text.js"></script>
+    <script src="../../jspsych-6.2.0/plugins/jspsych-survey-html-form.js"></script>
+    <link href="../../jspsych-6.2.0/css/jspsych.css" rel="stylesheet" type="text/css">
+    <link href="../index.css" rel="stylesheet" type="text/css">
+    <link href="../socialstuff.css" rel="stylesheet" type="text/css">
+</head>
+
+<body class="main-body"></body>
+<script>
+    // Choose button side
+    let button_order = "NULL"
+    if (Math.floor(Math.random() * 2)) {
+        button_order = "NEW_OLD";
+    } else {
+        button_order = "OLD_NEW";
+    }
+</script>
+<script src="../make_utils.js"></script>
+<script>
+    // some global variables
+    // Identify main two talkers
+    let talker_case = "NA";
+    if (Math.floor(Math.random() * 2)) {
+        talker_case = "white";
+    } else {
+        talker_case = "Black";
+    }
+    // Identify NoV with likelihoods 10%/15%/20%/25%/30%
+    let NoV_case = Math.floor(Math.random() * 100)
+    let NoV = 0;
+    if (NoV_case < 10) {
+        NoV = 1;
+    } else if (NoV_case < 25) {
+        NoV = 2;
+    } else if (NoV_case < 45) {
+        NoV = 4;
+    } else if (NoV_case < 70) {
+        NoV = 6;
+    } else {
+        NoV = 8;
+    }
+    console.log(talker_case);
+    console.log(NoV_case);
+    console.log(NoV);
+    let white_main = ["WMC08", "WMC09"]
+    let white_rem = ["BFC02", "BFC04", "BMC01", "BMC02", "WFC01", "WFC03", "BFA03", "BFA06", "BMA02", "BMA04", "WFA02", "WFA03", "WMA01", "WMA02"]
+    let black_main = ["BMC01", "BMC02"]
+    let black_rem = ["BFC02", "BFC04", "WMC08", "WMC09", "WFC01", "WFC03", "BFA03", "BFA06", "BMA02", "BMA04", "WFA02", "WFA03", "WMA01", "WMA02"]
+
+    let talker_ids = [];
+    white_rem = shuffle(white_rem);
+    black_rem = shuffle(black_rem);
+    if (talker_case == "Black") {
+        if (NoV == 1) {
+            talker_ids.push(black_main[Math.floor(Math.random() * 2)])
+        } else {
+            talker_ids = black_main;
+            for (let i = 0; i < NoV - 2; i++) {
+                talker_ids.push(black_rem[i])
+            }
+        }
+    } else {
+        if (NoV == 1) {
+            talker_ids.push(white_main[Math.floor(Math.random() * 2)])
+        } else {
+            talker_ids = white_main;
+            for (let i = 0; i < NoV - 2; i++) {
+                talker_ids.push(white_rem[i])
+            }
+        }
+    } 
+    console.log(talker_ids);
+
+    // and then for the audio check
+    let identical_tokens = true;
+    let wrong_phase = 0;
+    let correct_quiet = 0;
+    let pass = false;
+</script>
+<script src="../socialstuff.js"></script>
+<script src="../../csvs/word_ids_1.js"></script>
+
+<script>
+    word_ids = shuffle(word_ids);
+</script>
+<script src="make_stims.js"></script>
+<script src="../practice_feedback.js"></script>
+<script src="../audiocheck.js"></script>
+<script src="index.js"></script>
+</html>
